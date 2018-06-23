@@ -33,4 +33,13 @@ public class Rocker extends BaseBenchmark {
                 .toString();
     }
 
+    
+    
+    
+    public static void main(String[] args) throws Exception {
+    	Httl test = new Httl();
+    	test.setup();
+    	System.out.println("==>"+test.benchmark());
+	}
+
 }

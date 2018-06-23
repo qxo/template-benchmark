@@ -21,7 +21,7 @@ public class Freemarker extends BaseBenchmark {
 
     @Setup
     public void setup() throws IOException {
-        Configuration configuration = new Configuration(Configuration.VERSION_2_3_22);
+        Configuration configuration = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
         configuration.setTemplateLoader(new ClassTemplateLoader(getClass(), "/"));
         template = configuration.getTemplate("templates/stocks.freemarker.html");
         this.context = getContext();
@@ -29,7 +29,7 @@ public class Freemarker extends BaseBenchmark {
 
     @Benchmark
     public String benchmark() throws TemplateException, IOException {
-        Writer writer = new StringWriter();
+        Writer writer = new StringWriter(BUFFER_SIZE);
         template.process(context, writer);
         return writer.toString();
     }

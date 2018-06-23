@@ -30,7 +30,7 @@ public class Velocity extends BaseBenchmark {
 
     @Benchmark
     public String benchmark() {
-        Writer writer = new StringWriter();
+        Writer writer = new StringWriter(BUFFER_SIZE);
         template.merge(context, writer);
         return writer.toString();
     }

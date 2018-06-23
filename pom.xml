@@ -11,18 +11,19 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jmh.version>1.11.2</jmh.version>
+		<jmh.version>1.21</jmh.version>
 		<uberjar.name>benchmarks</uberjar.name>
 
-		<pebble.version>2.2.0</pebble.version>
-		<mustache.version>0.9.1</mustache.version>
-		<freemarker.version>2.3.23</freemarker.version>
+		<pebble.version>2.4.0</pebble.version>
+		<mustache.version>0.9.5</mustache.version>
+		<freemarker.version>2.3.28</freemarker.version>
 		<velocity.version>1.7</velocity.version>
-		<thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
+		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
 		<junit.version>4.12</junit.version>
-		<trimou.version>1.8.2.Final</trimou.version>
-		<hbs.version>4.0.1</hbs.version>
-		<rocker.version>0.10.3</rocker.version>
+		<trimou.version>2.5.0.Final</trimou.version>
+		<hbs.version>4.1.0</hbs.version>
+		<rocker.version>0.24.0</rocker.version>
+		<groovy.version>2.4.15</groovy.version>
 	</properties>
 
 	<licenses>
@@ -105,6 +106,50 @@
 	</build>
 
 	<dependencies>
+	<!-- https://mvnrepository.com/artifact/org.amebastack.template/httl -->
+<dependency>
+    <groupId>org.amebastack.template</groupId>
+    <artifactId>httl</artifactId>
+    <version>1.0.12</version>
+</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.jtwig/jtwig-core -->
+<dependency>
+    <groupId>org.jtwig</groupId>
+    <artifactId>jtwig-core</artifactId>
+    <version>5.87.0.RELEASE</version>
+</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.ibeetl/beetl -->
+<dependency>
+    <groupId>com.ibeetl</groupId>
+    <artifactId>beetl</artifactId>
+    <version>2.8.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.github.subchen/jetbrick-template -->
+<dependency>
+    <groupId>com.github.subchen</groupId>
+    <artifactId>jetbrick-template</artifactId>
+    <version>2.1.6</version>
+</dependency>
+
+
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+</dependency>
+	<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/org.mvel/mvel2 -->
+		<dependency>
+		    <groupId>org.mvel</groupId>
+		    <artifactId>mvel2</artifactId>
+		    <version>2.4.0.Final</version>
+		</dependency>
 
 		<!-- benchmarking dependencies -->
 		<dependency>
@@ -160,7 +205,12 @@
             <artifactId>rocker-runtime</artifactId>
             <version>${rocker.version}</version>
         </dependency>
-
+  <dependency>
+   <groupId>org.codehaus.groovy</groupId>
+   <artifactId>groovy-all</artifactId>
+   <version>${groovy.version}</version>
+   <scope>compile</scope>
+  </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -169,7 +219,29 @@
 		</dependency>
 
 	</dependencies>
-
+	<dependencyManagement>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.25</version>
+    <scope>runtime</scope>
+</dependency>
+	<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.25</version>
+    <scope>compile</scope>
+</dependency>
+	
+	<dependency>
+		<groupId>org.antlr</groupId>
+		<artifactId>antlr4-runtime</artifactId>
+		<version>4.7.1</version>
+	</dependency>
+	</dependencies>
+	</dependencyManagement>
 	<scm>
 		<connection>scm:git:git://github.com/mbosecke/template-benchmark.git</connection>
 		<developerConnection>scm:git:git@github.com:mbosecke/template-benchmark.git</developerConnection>

@@ -14,9 +14,12 @@ JMH benchmark for popular Java template engines:
 Running the benchmark
 ======================
 
-1. Download the source code and build it (`mvn clean install`)
+1. Download the source code and build it (`mvn clean package`)
 2. Run the entire benchmark suite with `java -jar target/benchmarks.jar`
 3. (Optional) To run a single benchmark, such as Mustache, use `java -jar target/benchmarks.jar Mustache`
+4. (Optional) for fast test, use:
+`java -jar target/benchmarks.jar  Httl GroovyGStringTemplate Rocker  -w 1 -r 1  -wi 5 -i 10 -f 1 -tu ms`
+`java -jar target/benchmarks.jar -w 1 -r 1  -wi 5 -i 10 -f 1 -tu ms`
 
 Generating plot
 ===============

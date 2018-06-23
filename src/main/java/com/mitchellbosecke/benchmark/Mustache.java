@@ -44,7 +44,7 @@ public class Mustache extends BaseBenchmark {
         Map<String, Object> data = getContext();
         data.put("items", new StockCollection((Collection<Stock>) data.get("items")));
 
-        Writer writer = new StringWriter();
+        Writer writer = new StringWriter(BUFFER_SIZE);
         template.execute(writer, data);
         return writer.toString();
     }

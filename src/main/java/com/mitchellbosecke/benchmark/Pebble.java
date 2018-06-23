@@ -25,7 +25,7 @@ public class Pebble extends BaseBenchmark {
 
     @Benchmark
     public String benchmark() throws PebbleException, IOException {
-        StringWriter writer = new StringWriter();
+        StringWriter writer = new StringWriter(BUFFER_SIZE);
         template.evaluate(writer, context);
         return writer.toString();
     }
