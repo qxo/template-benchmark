@@ -42,4 +42,23 @@ Generally, the score represents the number of templates rendered per second; the
 Example Results
 ===============
 
+```
+
+Benchmark                         Mode  Cnt      Score      Error  Units
+Beetl.benchmark                  thrpt   50  27206.473 ±  792.578  ops/s
+Freemarker.benchmark             thrpt   50  15613.483 ±  517.859  ops/s
+GroovyGStringTemplate.benchmark  thrpt   50  25389.451 ±  554.556  ops/s
+GroovySimpleTemplate.benchmark   thrpt   50  21001.600 ± 1155.464  ops/s
+Handlebars.benchmark             thrpt   50  15549.602 ±  519.347  ops/s
+Httl.benchmark                   thrpt   50  48037.638 ± 2460.181  ops/s
+Jet.benchmark                    thrpt   50  32839.134 ±  882.280  ops/s
+Jtwig.benchmark                  thrpt   50   2745.202 ±   76.260  ops/s
+Mustache.benchmark               thrpt   50  18752.962 ± 1216.036  ops/s
+MvelTemplate.benchmark           thrpt   50  13409.926 ±  755.373  ops/s
+Pebble.benchmark                 thrpt   50  23410.833 ± 1334.315  ops/s
+Rocker.benchmark                 thrpt   50  33837.562 ± 1101.882  ops/s
+Thymeleaf.benchmark              thrpt   50   3789.974 ±  109.444  ops/s
+Trimou.benchmark                 thrpt   50  19466.601 ±  959.727  ops/s
+Velocity.benchmark               thrpt   50  17430.453 ±  522.866  ops/s
+```
 ![Template Comparison](results.png)
