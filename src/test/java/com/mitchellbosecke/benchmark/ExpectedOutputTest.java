@@ -81,6 +81,67 @@ public class ExpectedOutputTest {
         assertOutput(hbs.benchmark());
     }
 
+    @Test
+    public void testBeetlOutput() throws Exception {
+    	Beetl tool = new Beetl();
+		tool.setup();
+        assertOutput(tool.benchmark());
+	}
+    
+    @Test
+    public void testHttlOutput() throws Exception {
+    	Httl tool = new Httl();
+		tool.setup();
+        assertOutput(tool.benchmark());
+	}
+    
+    @Test
+    public void testEnjoyOutput() throws Exception {
+    	Enjoy tool = new Enjoy();
+		tool.setup();
+        assertOutput(tool.benchmark());
+	}
+    
+    
+    @Test
+    public void testMvelOutput() throws Exception {
+    	final Mvel tool = new Mvel();
+		setupAndTest(tool);
+	}
+    
+    @Test
+    public void testGroovySimpleOutput() throws Exception {
+    	final GroovySimple tool = new GroovySimple();
+		setupAndTest(tool);
+	}
+    
+    @Test
+    public void testGroovyGStringOutput() throws Exception {
+    	final GroovyGString tool = new GroovyGString();
+		setupAndTest(tool);
+	}
+    
+    
+    @Test
+    public void testJetOutput() throws Exception {
+    	final Jet tool = new Jet();
+		setupAndTest(tool);
+	}
+    
+    
+    @Test
+    public void testJtwigOutput() throws Exception {
+    	final Jtwig tool = new Jtwig();
+		setupAndTest(tool);
+	}
+    
+    
+
+	private void setupAndTest(BaseBenchmark tool) throws Exception, IOException {
+		tool.setup();
+        assertOutput(tool.benchmark());
+	}
+    
     private void assertOutput(final String output) throws IOException {
         assertEquals(readExpectedOutputResource(), output.replaceAll("\\s", ""));
     }

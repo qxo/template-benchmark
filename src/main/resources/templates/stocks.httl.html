@@ -54,8 +54,8 @@ thead {
 		</thead>
 		<tbody>
 			 <!--#for(com.mitchellbosecke.benchmark.model.Stock item:items) -->
-			<tr  class="${["even", "odd"][(item_index+1) %2]}">
-				<td>${item_index + 1}</td>
+			<tr  class="${ for.index%2 == 0 ? 'odd': 'even' }">
+				<td>${for.index + 1}</td>
 				<td><a href="/stocks/${item.symbol}">${item.symbol}</a></td>
 				<td><a href="${item.url}">${item.name}</a></td>
 				<td><strong>${item.price}</strong></td><!--#if (item.change < 0.0)-->

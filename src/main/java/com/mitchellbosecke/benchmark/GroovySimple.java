@@ -1,6 +1,5 @@
 package com.mitchellbosecke.benchmark;
 
-import java.io.File;
 import java.io.StringWriter;
 import java.net.URL;
 import java.util.Map;
@@ -12,7 +11,7 @@ import groovy.text.SimpleTemplateEngine;
 import groovy.text.Template;
 
 
-public class GroovySimpleTemplate extends BaseBenchmark {
+public class GroovySimple extends BaseBenchmark {
 
     private Map<String, Object> context;
 
@@ -33,7 +32,7 @@ public class GroovySimpleTemplate extends BaseBenchmark {
     }
     
     public static void main(String[] args) throws Exception {
-    	GroovySimpleTemplate test = new GroovySimpleTemplate();
+    	GroovySimple test = new GroovySimple();
     	test.setup();
     	System.out.println("==>"+test.benchmark());
 	}

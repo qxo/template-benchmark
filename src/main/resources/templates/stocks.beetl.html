@@ -54,13 +54,10 @@ thead {
 		</thead>
 		<tbody>
 			<%
-			var item_index=0;
 			 for ( item in items){ 
-			 item_index++;
-			 var cls = (item_index+1) %2 == 0 ? "even":"odd";
 			 %>
-			<tr class="${cls}">
-				<td>${item_index + 1}</td>
+			<tr class="${ itemLP.even  ? 'even': 'odd'}">
+				<td>${itemLP.index}</td>
 				<td><a href="/stocks/${item.symbol}">${item.symbol}</a></td>
 				<td><a href="${item.url}">${item.name}</a></td>
 				<td><strong>${item.price}</strong></td><% if (item.change < 0.0) {%>

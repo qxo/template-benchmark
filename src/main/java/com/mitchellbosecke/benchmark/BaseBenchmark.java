@@ -27,7 +27,7 @@ import httl.util.IOUtils;
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
 @State(Scope.Benchmark)
-public class BaseBenchmark {
+public abstract class BaseBenchmark {
 
 	protected static final int BUFFER_SIZE = 1024;
 	
@@ -48,4 +48,7 @@ public class BaseBenchmark {
     	String tpl = IOUtils.readToString(new InputStreamReader(getResourceAsStream( resourcePath)));
     	return tpl;
     }
+    public abstract void setup() throws Exception ;
+    
+    public abstract String benchmark() throws Exception ;
 }

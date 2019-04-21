@@ -11,19 +11,22 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
 		<jmh.version>1.21</jmh.version>
 		<uberjar.name>benchmarks</uberjar.name>
 
 		<pebble.version>2.4.0</pebble.version>
-		<mustache.version>0.9.5</mustache.version>
+		<mustache.version>0.9.6</mustache.version>
 		<freemarker.version>2.3.28</freemarker.version>
 		<velocity.version>1.7</velocity.version>
-		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+		<thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
 		<junit.version>4.12</junit.version>
 		<trimou.version>2.5.0.Final</trimou.version>
-		<hbs.version>4.1.0</hbs.version>
-		<rocker.version>0.24.0</rocker.version>
-		<groovy.version>2.4.15</groovy.version>
+		<handlebars.version>4.1.2</handlebars.version>
+		<rocker.version>1.2.1</rocker.version>
+		<groovy.version>2.5.6</groovy.version>
 	</properties>
 
 	<licenses>
@@ -113,6 +116,13 @@
     <version>1.0.12</version>
 </dependency>
 	
+	<!-- https://mvnrepository.com/artifact/com.jfinal/enjoy -->
+<dependency>
+    <groupId>com.jfinal</groupId>
+    <artifactId>enjoy</artifactId>
+    <version>3.8</version>
+</dependency>
+	
 	<!-- https://mvnrepository.com/artifact/org.jtwig/jtwig-core -->
 <dependency>
     <groupId>org.jtwig</groupId>
@@ -198,7 +208,7 @@
 		<dependency>
 			<groupId>com.github.jknack</groupId>
 			<artifactId>handlebars</artifactId>
-			<version>${hbs.version}</version>
+			<version>${handlebars.version}</version>
 		</dependency>
         <dependency>
             <groupId>com.fizzed</groupId>
@@ -207,7 +217,7 @@
         </dependency>
   <dependency>
    <groupId>org.codehaus.groovy</groupId>
-   <artifactId>groovy-all</artifactId>
+   <artifactId>groovy-templates</artifactId>
    <version>${groovy.version}</version>
    <scope>compile</scope>
   </dependency>

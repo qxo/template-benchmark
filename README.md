@@ -10,6 +10,11 @@ JMH benchmark for popular Java template engines:
 * [Thymeleaf](http://www.thymeleaf.org/)
 * [Trimou](http://trimou.org/)
 * [Velocity](http://velocity.apache.org/)
+* [HTTL](http://httl.github.io/zh/)
+* [enjoy](https://www.jfinal.com/doc/6-4)
+* [Beetl](http://ibeetl.com/)
+* [Jtwig](http://jtwig.org/)
+* [mvel](http://mvel.documentnode.com/#mvel-2.0-templating-guide)
 
 Running the benchmark
 ======================
@@ -17,13 +22,14 @@ Running the benchmark
 1. Download the source code and build it (`mvn clean package`)
 2. Run the entire benchmark suite with `java -jar target/benchmarks.jar`
 3. (Optional) To run a single benchmark, such as Mustache, use `java -jar target/benchmarks.jar Mustache`
-4. (Optional) for fast test, use:
-`java -jar target/benchmarks.jar  Httl GroovyGStringTemplate Rocker  -w 1 -r 1  -wi 5 -i 10 -f 1 -tu ms`
+4. (Optional) for fast test, use: 
+`java -jar target/benchmarks.jar  Httl GroovyGStringTemplate Rocker  -w 1 -r 1  -wi 5 -i 10 -f 1`
 `java -jar target/benchmarks.jar -w 1 -r 1  -wi 5 -i 10 -f 1 -tu ms`
 
 Generating plot
 ===============
 1. Run benchmark while exporting results to csv with `java -jar target/benchmarks.jar -rff results.csv -rf csv`
+
 2. Use gnuplot to generate plot with `gnuplot benchmark.plot`. This will output `results.png`.
 
 Rules of Template Engine Configuration
@@ -43,22 +49,22 @@ Example Results
 ===============
 
 ```
-
-Benchmark                         Mode  Cnt      Score      Error  Units
-Beetl.benchmark                  thrpt   50  27206.473 ±  792.578  ops/s
-Freemarker.benchmark             thrpt   50  15613.483 ±  517.859  ops/s
-GroovyGStringTemplate.benchmark  thrpt   50  25389.451 ±  554.556  ops/s
-GroovySimpleTemplate.benchmark   thrpt   50  21001.600 ± 1155.464  ops/s
-Handlebars.benchmark             thrpt   50  15549.602 ±  519.347  ops/s
-Httl.benchmark                   thrpt   50  48037.638 ± 2460.181  ops/s
-Jet.benchmark                    thrpt   50  32839.134 ±  882.280  ops/s
-Jtwig.benchmark                  thrpt   50   2745.202 ±   76.260  ops/s
-Mustache.benchmark               thrpt   50  18752.962 ± 1216.036  ops/s
-MvelTemplate.benchmark           thrpt   50  13409.926 ±  755.373  ops/s
-Pebble.benchmark                 thrpt   50  23410.833 ± 1334.315  ops/s
-Rocker.benchmark                 thrpt   50  33837.562 ± 1101.882  ops/s
-Thymeleaf.benchmark              thrpt   50   3789.974 ±  109.444  ops/s
-Trimou.benchmark                 thrpt   50  19466.601 ±  959.727  ops/s
-Velocity.benchmark               thrpt   50  17430.453 ±  522.866  ops/s
+Benchmark                 Mode  Cnt      Score      Error  Units  Score/min
+Beetl.benchmark          thrpt   10  34567.034 ±  256.611  ops/s     10.211
+Enjoy.benchmark          thrpt   10  43397.859 ±  311.698  ops/s     12.819
+Freemarker.benchmark     thrpt   10  18605.096 ±  253.902  ops/s      5.496
+GroovyGString.benchmark  thrpt   10  28099.659 ±  138.452  ops/s      8.300
+GroovySimple.benchmark   thrpt   10  26661.763 ±  192.918  ops/s      7.876
+Handlebars.benchmark     thrpt   10  19829.242 ±  176.739  ops/s      5.857
+Httl.benchmark           thrpt   10  59528.885 ± 3592.575  ops/s     17.584
+Jet.benchmark            thrpt   10  45397.569 ±  668.153  ops/s     13.410
+Jtwig.benchmark          thrpt   10   3385.342 ±   31.189  ops/s      1.000
+Mustache.benchmark       thrpt   10  22671.380 ±  465.540  ops/s      6.697
+Mvel.benchmark           thrpt   10  18540.058 ±  179.713  ops/s      5.477
+Pebble.benchmark         thrpt   10  28663.258 ±  305.974  ops/s      8.467
+Rocker.benchmark         thrpt   10  40469.989 ±  199.977  ops/s     11.954
+Thymeleaf.benchmark      thrpt   10   5969.075 ±   26.323  ops/s      1.763
+Trimou.benchmark         thrpt   10  25315.292 ±  183.020  ops/s      7.478
+Velocity.benchmark       thrpt   10  21306.506 ±  237.285  ops/s      6.294
 ```
 ![Template Comparison](results.png)

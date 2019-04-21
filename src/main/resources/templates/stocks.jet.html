@@ -56,8 +56,8 @@ thead {
 		#set(int item_index=0)
 			#for(item:items)
 			#set(item_index=item_index+1)
-			<tr  class="${["even", "odd"][(item_index+1) %2]}">
-				<td>${item_index + 1}</td>
+			<tr  class="${["even", "odd"][item_index %2]}">
+				<td>${item_index }</td>
 				<td><a href="/stocks/${item.symbol}">${item.symbol}</a></td>
 				<td><a href="${item.url}">${item.name}</a></td>
 				<td><strong>${item.price}</strong></td>#if (item.change < 0.0)

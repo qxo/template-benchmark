@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Setup;
 
 
-public class MvelTemplate extends BaseBenchmark {
+public class Mvel extends BaseBenchmark {
 
     private Map<String, Object> context;
 
@@ -18,7 +18,7 @@ public class MvelTemplate extends BaseBenchmark {
 
     @Setup
     public void setup() throws Exception {
-    	template = TemplateCompiler.compileTemplate(MvelTemplate.class.getResourceAsStream("/templates/stocks.mvel.html"));
+    	template = TemplateCompiler.compileTemplate(Mvel.class.getResourceAsStream("/templates/stocks.mvel.html"));
         this.context = getContext();
     }
 
@@ -30,7 +30,7 @@ public class MvelTemplate extends BaseBenchmark {
     }
     
     public static void main(String[] args) throws Exception {
-    	MvelTemplate test = new MvelTemplate();
+    	Mvel test = new Mvel();
     	test.setup();
     	System.out.println("==>"+test.benchmark());
 	}

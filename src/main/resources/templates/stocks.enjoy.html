@@ -53,20 +53,18 @@ thead {
 			</tr>
 		</thead>
 		<tbody>
-			@code{ item_index=0;}
-			@foreach{ item: items }
-			@code{ cls= ( item_index++) %2 ==0  ? "odd": "even"; }
-			<tr class="${cls }">
-				<td>${item_index}</td>
-				<td><a href="/stocks/${item.symbol}">${item.symbol}</a></td>
-				<td><a href="${item.url}">${item.name}</a></td>
-				<td><strong>${item.price}</strong></td>@if{item.change < 0.0}
-				<td class="minus">${item.change}</td>
-				<td class="minus">${item.ratio}</td>@else{}
-				<td>${item.change}</td>
-				<td>${item.ratio}</td>@end{}
+			 #for( item:items) 
+			<tr  class="#(for.odd? 'odd':'even')">
+				<td>#(for.index+ 1)</td>
+				<td><a href="/stocks/#(item.symbol)">#(item.symbol)</a></td>
+				<td><a href="#(item.url)">#(item.name)</a></td>
+				<td><strong>#(item.price)</strong></td>#if (item.change < 0.0)
+				<td class="minus">#(item.change)</td>
+				<td class="minus">#(item.ratio)</td>#else
+				<td>#(item.change)</td>
+				<td>#(item.ratio)</td>#end
 			</tr>
-			@end{}
+			 #end
 		</tbody>
 	</table>
 

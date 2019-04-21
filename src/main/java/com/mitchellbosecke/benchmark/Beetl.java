@@ -11,10 +11,6 @@ import org.beetl.core.resource.StringTemplateResourceLoader;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Setup;
 
-import httl.util.IOUtils;
-
-
-
 public class Beetl extends BaseBenchmark {
 
     private Map<String, Object> context;
@@ -24,7 +20,7 @@ public class Beetl extends BaseBenchmark {
     @Setup
     public void setup() throws Exception {
      	//http://httl.github.io/zh/
-    	String tpl = IOUtils.readToString(new InputStreamReader(getResourceAsStream("/templates/stocks.beetl.html")));
+    	String tpl =getResouceContent("/templates/stocks.beetl.html");
     	StringTemplateResourceLoader resourceLoader = new StringTemplateResourceLoader();
     	Configuration cfg = Configuration.defaultConfiguration();
     	GroupTemplate gt = new GroupTemplate(resourceLoader, cfg);

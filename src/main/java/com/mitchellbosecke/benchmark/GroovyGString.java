@@ -11,7 +11,7 @@ import groovy.text.GStringTemplateEngine;
 import groovy.text.Template;
 
 
-public class GroovyGStringTemplate extends BaseBenchmark {
+public class GroovyGString extends BaseBenchmark {
 
     private Map<String, Object> context;
 
@@ -32,7 +32,7 @@ public class GroovyGStringTemplate extends BaseBenchmark {
     }
     
     public static void main(String[] args) throws Exception {
-    	GroovyGStringTemplate test = new GroovyGStringTemplate();
+    	GroovyGString test = new GroovyGString();
     	test.setup();
     	System.out.println("==>"+test.benchmark());
 	}
